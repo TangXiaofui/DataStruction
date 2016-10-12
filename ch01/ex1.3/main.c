@@ -34,28 +34,36 @@ int calMax_2(int array[],int left,int right)
 		return array[left];
 	}
 	int lmax = 0,rmax = 0;
+	int max;
 	int n = (right + left)/2; 
 	lmax = calMax_2(array,left,n);
 	rmax = calMax_2(array,n+1,right);
 	
-	int max = 0;
+	int lboundmax = 0,lsum = 0;
+	int rboundmax = 0,rsum =0;
+	int i;
+	for(i = n ; i >= left;i--)
+	{
+		lsum += array[i];
+		if(lsum > lboundmax)
+			lboundmax = lsum;
+	}
+
+	for(i = n+1; i <= right;i++)
+	{
+		rsum += array[i];
+		if(rsum > rboundmax)
+			rboundmax=rsum;
+	}
+
 	if(lmax > rmax)
 		max = lmax;
-	else
+	else 
 		max = rmax;
-	int i = 0;
-	int sum = array[n];
-	if(n < right)
-	{
-		for(i = 1; i <= right-n ;i++)
-		{
-			sum+= array[n+i];
-			if(n-i >= 0)
-				sum += array[n-i];
-			if(max < sum)
-				max = sum;
-		}
-	}
+	
+	if(max < (rboundmax+lboundmax))
+		max = rboundmax+lboundmax;
+
 	return max;
 }
 
@@ -78,10 +86,11 @@ void calMax_3(int array[],int n)
 
 int main(int argc,char *argv[])
 {
-	int array[] = {-2,11,-4,13,-5,-2};
+//	int array[] = {-2,11,-4,13,-5,-2};
+	int array[] = {-3,1,2,3,4,-5,-6,-2};
 	int n = sizeof(array)/sizeof(array[0]);
 	//calMax_1(array,n);
-//	printf("max = %d\n",calMax_2(array,0,n-1));
-	calMax_3(array,n);
+	printf("max = %d\n",calMax_2(array,0,n-1));
+//	calMax_3(array,n);
 	return 0;
 }
