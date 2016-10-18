@@ -8,10 +8,10 @@ void binarySearch(int array[],int len,int k)
 	while(left <= right)
 	{
 		mid = (left + right)/2;
-		if( k > mid )
+		if( k > array[mid] )
 			left = mid+1;
-		else if( k < mid )
-			right = mid;
+		else if( k < array[mid] )
+			right = mid -1;
 		else 
 		{
 			flag = 1;
@@ -20,7 +20,7 @@ void binarySearch(int array[],int len,int k)
 	}
 	
 	if(flag)
-		printf("mid = %d\n",mid);
+		printf("mid = %d\n",array[mid]);
 	else
 		printf("not found\n");	
 
@@ -28,14 +28,17 @@ void binarySearch(int array[],int len,int k)
 
 }
 
+void gcd(int num1,int num2)
+{
 
+}
 
 int main(int argc,char *argv[])
 {
-	int array[] = {1,2,3,4,5,6,7,8};
+	int array[] = {1,3,4,8,11,19,28};
 	int len = sizeof(array) / sizeof(array[0]);
 	binarySearch(array,len,2);
 	
-
+	
 	return 0;
 }
