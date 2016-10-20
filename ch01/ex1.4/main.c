@@ -30,7 +30,14 @@ void binarySearch(int array[],int len,int k)
 
 void gcd(int num1,int num2)
 {
-
+	int n = 0;
+	while(num2)
+	{
+		n = num1 % num2;
+		num1 = num2;
+		num2 = n;
+	}
+	printf("num1= %d\n",num1);
 }
 
 int main(int argc,char *argv[])
@@ -39,6 +46,7 @@ int main(int argc,char *argv[])
 	int len = sizeof(array) / sizeof(array[0]);
 	binarySearch(array,len,2);
 	
+	gcd(50,15);
 	
 	return 0;
 }
