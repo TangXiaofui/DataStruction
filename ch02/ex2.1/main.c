@@ -35,5 +35,14 @@ int main(int argc,char* argv[])
 	dDelete(3,dl);
 	dPrintList(dHead,1);
 	dPrintList(dTail,0);
+	printf("------------------------\n");
+
+	rList rl;
+	rInit(&rl);
+	rInsert(1,rl);
+	rInsert(2,rl);
+	rPrintList(rl,0);
+	rDelete(2,rl);
+	rPrintList(rl,1);
 	return 0;
 }
