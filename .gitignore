@@ -1,3 +1,12 @@
 *.o
 *.out
 test
+/Debug
+/ipch
+*.opensdf
+*.sdf
+*.vcxproj*
+ReadMe.txt
+
+
+
