@@ -92,33 +92,27 @@ int FindSubstr(char *data1,int n1,char *data2,int n2)
 	memset(a,0,sizeof(a));
 	int i = 0,j = 0;
 	int flag = 0;
-	for(i = 0; i < n2 ;i++)
+	for(i = 0; i < n2+1 ;i++)
 	{
 		flag = 0;
-		for(j = 0; j < n1 ; j++)
+		for(j = 0; j < n1+1 ; j++)
 		{
 			if(data2[i] == data1[j])
-				flag = 1;
-			if(flag)
-			{
-				a[i+1][j] = a[i][j]+flag;
-			}
-			else
-			{
-				a[i+1][j] = a[i][j];
-			}
-			printf("%d ",a[i+1][j]);
+				a[i+1][j+1] = a[i][j]+1;
+			else	
+				a[i+1][j+1] = a[i][j+1] > a[i+1][j] ? a[i][j+1] : a[i+1][j];
+			printf("%d ",a[i][j]);
 		}
 		printf("\n");
 	}
 	
 	int temp = -1;
-	for(i = 0 ; i < n1 ; i++)
+	for(i = 1 ; i < n1+1 ; i++)
 	{
 		if(temp != a[n2][i])
 		{
 			temp = a[n2][i];
-			printf("%c",data1[i]);
+			printf("%c",data1[i-1]);
 		}
 	}
 	printf("\n");
