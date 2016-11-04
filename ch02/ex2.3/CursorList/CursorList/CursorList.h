@@ -4,7 +4,7 @@
 #define MAXLIST 10
 
 struct PtrNode;
-typedef int ElemType;
+typedef char ElemType;
 typedef struct PtrNode pNode;
 typedef int Pos;
 

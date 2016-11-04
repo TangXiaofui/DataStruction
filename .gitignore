@@ -1,8 +1,8 @@
 *.o
 *.out
 test
-/Debug
-/ipch
+/f/GitResp/DataStruction/ch02/ex2.3/CursorList/Debug
+/f/GitResp/DataStruction/ch02/ex2.3/CursorList/ipch
 *.opensdf
 *.sdf
 *.vcxproj*
