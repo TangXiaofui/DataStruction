@@ -21,5 +21,6 @@ sNode FindMin(sNode sn);
 sNode InitSNode(sNode sn,int elem);
 sNode InsertSNode(sNode sn,int elem);
 void PrintSearchTree(sNode sn);
+sNode DeleteElem(sNode sn,int elem);
 
 #endif

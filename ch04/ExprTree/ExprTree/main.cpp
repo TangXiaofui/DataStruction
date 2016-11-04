@@ -41,6 +41,11 @@ int main(int argc,char*argv[])
 	InsertSNode(sn,11);
 	PrintSearchTree(sn);
 
+	printf("\n");
+	DeleteElem(sn,3);
+	PrintSearchTree(sn);
+
+
 
 
 	return 0;
