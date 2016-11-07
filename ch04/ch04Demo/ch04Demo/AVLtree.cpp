@@ -43,7 +43,7 @@ aNode InsertANode(aNode an,int elem)
 		}
 		//相等就不用插入
 	}
-	an->Hight = MaxHeight(GetHeight(an->lc),GetHeight(an->rc));	//更新高度
+	an->Hight = MaxHeight(GetHeight(an->lc),GetHeight(an->rc))+1;	//更新高度
 	return an;
 }
 
@@ -96,4 +96,36 @@ aNode DoubleRotateRight(aNode an)
 	an->rc = SingleRotateLeft(an->rc);
 
 	return SingleRotateRight(an);
+}
+
+
+void PrintAnodePrev(aNode an)
+{
+	if (an == NULL)
+	{
+		return;
+	}
+	printf("%d ",an->elem);
+	PrintAnodePrev(an->lc);
+	PrintAnodePrev(an->rc);
+}
+void PrintAnodeMid(aNode an)
+{
+	if (an == NULL)
+	{
+		return;
+	}
+	PrintAnodeMid(an->lc);
+	printf("%d ",an->elem);
+	PrintAnodeMid(an->rc);
+}
+void PrintAnodeBack(aNode an)
+{
+	if (an == NULL)
+	{
+		return;
+	}
+	PrintAnodeBack(an->lc);
+	PrintAnodeBack(an->rc);
+	printf("%d ",an->elem);
 }

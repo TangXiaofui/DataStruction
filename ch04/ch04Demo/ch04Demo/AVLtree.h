@@ -22,6 +22,9 @@ aNode SingleRotateLeft(aNode an);
 aNode SingleRotateRight(aNode an);
 aNode DoubleRotateLeft(aNode an);
 aNode DoubleRotateRight(aNode an);
+void PrintAnodePrev(aNode an);
+void PrintAnodeMid(aNode an);
+void PrintAnodeBack(aNode an);
 
 
 
